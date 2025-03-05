@@ -14,7 +14,7 @@ pipeline {
             if [ -d JENKINS-CI_CD ]; then
               rm -rf JENKINS-CI_CD
             fi
-            git clone --branch main https://github.com/pnyn96/JENKINS-CI_CD.git
+            git clone --branch main https://github.com/pnyn15/JENKINS-CI_CD.git
           '''
         }
       }
@@ -32,7 +32,7 @@ pipeline {
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http://18.224.67.72:9000"
+        SONAR_URL = "http://3.138.36.230:9000"
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
